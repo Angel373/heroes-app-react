@@ -5,6 +5,7 @@ import { types } from '../../types/types';
 export const LoginScreen = ({history}) => {
 
     const {dispatch} = useContext(AuthContext);
+    const lastPathname = localStorage.getItem('lastPathname') || '/';
 
     const handleLogin = () => {
         
@@ -14,7 +15,7 @@ export const LoginScreen = ({history}) => {
                 name: 'Jhon'
             }
         });
-        history.replace('/');
+        history.replace(lastPathname);
     }
 
     return (
